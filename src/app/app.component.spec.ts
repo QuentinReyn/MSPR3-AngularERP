@@ -16,16 +16,10 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'Angular10FirebaseStorage'`, () => {
+  it(`should have as title 'Angular 10 Upload File - Firebase Storage'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('Angular10FirebaseStorage');
+    expect(app.title).toEqual('Angular 10 Upload File - Firebase Storage');
   });
 
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('Angular10FirebaseStorage app is running!');
-  });
 });
