@@ -91,7 +91,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
     HttpClientModule,
     MatPaginatorModule,
     MatTreeModule,
-    AngularFireModule.initializeApp(environment.firebase),
+    // AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
     AngularFireStorageModule,
     BrowserAnimationsModule,
