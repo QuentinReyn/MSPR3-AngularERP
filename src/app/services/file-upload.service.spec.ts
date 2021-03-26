@@ -1,14 +1,12 @@
 import { HttpClientModule, HttpEventType } from '@angular/common/http';
 import { TestBed } from '@angular/core/testing';
 import { skipWhile } from 'rxjs/operators';
-import { UploadFormComponent } from '../components/upload-form/upload-form.component';
 import { FileUpload } from '../models/file-upload.model';
 import { HttpClientTestingModule, HttpTestingController } from  '@angular/common/http/testing';
 import { FileUploadService } from './file-upload.service';
 
 describe('FileUploadService', () => {
   let service: FileUploadService;
-  let component: UploadFormComponent;
   const createFakeFile = (fileName: string = 'fileName'): File => {
     const blob = new Blob([''], { type: 'text/html' });
     blob['lastModifiedDate'] = '';
@@ -23,12 +21,8 @@ describe('FileUploadService', () => {
     });
     service = TestBed.inject(FileUploadService);
     httpTestingController  = TestBed.get(HttpTestingController);
-    component = TestBed.inject(UploadFormComponent);
   });
 
-  it('should be created', () => {
-    expect(service).toBeTruthy();
-  });
 
   // it('should upload the file - checkFileExist = true', () => {
   //   spyOn(component, 'upload').and.returnValue();
