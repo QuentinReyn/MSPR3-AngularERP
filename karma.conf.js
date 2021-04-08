@@ -27,19 +27,12 @@ module.exports = function (config) {
     port: 9876,
     colors: true,
     logLevel: config.LOG_INFO,
-	browsers: ["HeadlessChrome"],
+	browsers: ['ChromeHeadlessNoSandbox'],
     customLaunchers: {
-      HeadlessChrome: {
-        base: "ChromeHeadless",
-        flags: [
-          "--no-sandbox", // required to run without privileges in Docker
-          "--disable-web-security",
-          "--disable-gpu",
-          "--remote-debugging-port=9222"
-        ]
-      }
-    },
-    singleRun: true,
-    autoWatch: false,
+        ChromeHeadlessNoSandbox: {
+            base: 'ChromeHeadless',
+            flags: ['--no-sandbox']
+        }
+    }
   });
 };
