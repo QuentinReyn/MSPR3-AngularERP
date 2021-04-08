@@ -28,13 +28,16 @@ module.exports = function (config) {
     colors: true,
     logLevel: config.LOG_INFO,
     autoWatch: true,
-    singleRun: false,
-    browsers: ['Chrome'],
-//     customLaunchers: {
-//     Chromium_no_sandbox: {
-//     base: 'ChromiumHeadless',
-//     flags: ['--no-sandbox']
-//   }
-// },
+    browserNoActivityTimeout: 30000,
+    browsers: [
+      chromeHeadlessSupported ? 'ChromeHeadless' : 'Chrome'
+    ],
+    customLaunchers: {
+      ChromeHeadless: {
+          base: 'Chrome',
+          flags: ['--no-sandbox', '--headless', '--disable-gpu', '--remote-debugging-port=9222']
+      }
+    },
+    singleRun: true
   });
 };
