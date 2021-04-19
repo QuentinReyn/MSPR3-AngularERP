@@ -46,15 +46,29 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { PrixComponent } from './components/achats/prix/prix.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { AchatsComponent } from './components/achats/achats.component';
+import { MarchesComponent } from './components/achats/marches/marches.component';
+import { CommandesComponent } from './components/achats/commandes/commandes.component';
+import { PrixAddComponent } from './components/achats/prix/prix-add/prix-add.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
     AppComponent,
     PrixComponent,
     DashboardComponent,
-    SidenavComponent
+    SidenavComponent,
+    AchatsComponent,
+    MarchesComponent,
+    CommandesComponent,
+    PrixAddComponent,
   ],
+ 
   imports: [
+    CommonModule,
+    FormsModule, 
+    ReactiveFormsModule,
     MatBadgeModule,
     MatButtonModule,
     BrowserAnimationsModule,
@@ -97,6 +111,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
     BrowserAnimationsModule,
     AppRoutingModule
   ],
+  entryComponents: [PrixAddComponent],
   providers: [],
   bootstrap: [AppComponent]
 })
