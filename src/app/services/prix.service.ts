@@ -22,6 +22,11 @@ export class PrixService {
         return this.http.post(AppSettings.API_ENDPOINT + "/prices/", body).subscribe();
     }
 
+    updatePrix(resourceFormAdd: FormGroup) {
+      let body = { product_name : resourceFormAdd.value.product_name,tva:resourceFormAdd.value.tva,price:resourceFormAdd.value.price,id:resourceFormAdd.value.id};
+      return this.http.put(AppSettings.API_ENDPOINT + "/prices/"+resourceFormAdd.value.id, body).subscribe();
+  }
+
     deletePrixById(id) {
         return this.http.delete(AppSettings.API_ENDPOINT + "/prices/" + id);
     }

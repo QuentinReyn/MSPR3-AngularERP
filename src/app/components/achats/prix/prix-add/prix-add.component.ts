@@ -68,8 +68,8 @@ export class PrixAddComponent implements OnInit {
         this.onAdd.emit();
       });
     } else {
-      this.prixService.savePrix(this.prixAddForm);
-      this.snackBar.open('✅ prix successfully created ✅', null, {
+      this.prixService.updatePrix(this.prixAddForm);
+      this.snackBar.open('✅ prix successfully edited ✅', null, {
         duration: AppSettings.TOAST_DURATION,
       });
       this.dialogRef.close();

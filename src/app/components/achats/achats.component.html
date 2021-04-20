@@ -1,12 +1,11 @@
-<p>achats works!</p>
-<h2>First Component</h2>
-
-<nav>
-  <ul>
-    <li><a routerLink="prix">Prix</a></li>
-    <li><a routerLink="marches">Marches</a></li>
-    <li><a routerLink="commandes">Commandes</a></li>
-  </ul>
-</nav>
-
-<router-outlet></router-outlet>
+<mat-tab-group>
+  <mat-tab label="Prix">
+    <app-prix></app-prix>
+  </mat-tab>
+  <mat-tab label="Marches">
+    <app-marches></app-marches>
+  </mat-tab>
+  <mat-tab label="Commandes">
+    <app-commandes></app-commandes>
+  </mat-tab>
+</mat-tab-group>
