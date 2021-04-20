@@ -4,38 +4,38 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Global } from '../../../../../app/models/global.model';
-import { PrixService } from '../../../../../app/services/prix.service';
+import { CommandesService } from '../../../../../app/services/commandes.service';
 import { AppSettings } from '../../../../../app/app.settings';
-import { cpuUsage } from 'process';
 
 @Component({
-  selector: 'app-prix-add',
-  templateUrl: './prix-add.component.html',
-  styleUrls: ['./prix-add.component.css'],
+  selector: 'app-commandes-add',
+  templateUrl: './commandes-add.component.html',
+  styleUrls: ['./commandes-add.component.css']
 })
-export class PrixAddComponent implements OnInit {
+export class CommandesAddComponent implements OnInit {
+
   constructor(
-    @Inject(MAT_DIALOG_DATA) public prix: Global,
+    @Inject(MAT_DIALOG_DATA) public commande: Global,
     public snackBar: MatSnackBar,
     private _formBuilder: FormBuilder,
-    public dialogRef: MatDialogRef<PrixAddComponent>,
-    public prixService: PrixService
+    public dialogRef: MatDialogRef<CommandesAddComponent>,
+    public commandeService: CommandesService
   ) {}
 
   onAdd = new EventEmitter();
-  prixAddForm: FormGroup;
+  commandeAddForm: FormGroup;
   appSettings = AppSettings;
 
   ngOnInit() {
-    if (this.prix != null) {
-      this.prixAddForm = this._formBuilder.group({
-        product_name: [this.prix.product_name, Validators.required],
-        tva: [this.prix.tva],
-        price: [this.prix.price],
-        id: [this.prix.id],
+    if (this.commande != null) {
+      this.commandeAddForm = this._formBuilder.group({
+        product_name: [this.commande.product_name, Validators.required],
+        tva: [this.commande.tva],
+        price: [this.commande.price],
+        id: [this.commande.id],
       });
     } else {
-      this.prixAddForm = this._formBuilder.group({
+      this.commandeAddForm = this._formBuilder.group({
         product_name: ['', Validators.required],
         tva: [],
         price: [],
@@ -48,28 +48,28 @@ export class PrixAddComponent implements OnInit {
     this.dialogRef.close();
   }
 
-  submitPrix() {
-    if (this.prix == null) {
-      this.prixService.listPrix().subscribe((data) => {
+  submitCommande() {
+    if (this.commande == null) {
+      this.commandeService.listCommande().subscribe((data) => {
         var lastId = Math.max.apply(
           Math,
           data.map(function (o) {
             return o.id;
           })
         );
-        this.prixAddForm.patchValue({
+        this.commandeAddForm.patchValue({
           id: lastId + 1,
         });
-        this.prixService.savePrix(this.prixAddForm);
-        this.snackBar.open('✅ prix successfully created ✅', null, {
+        this.commandeService.saveCommande(this.commandeAddForm);
+        this.snackBar.open('✅ commande successfully created ✅', null, {
           duration: AppSettings.TOAST_DURATION,
         });
         this.dialogRef.close();
         this.onAdd.emit();
       });
     } else {
-      this.prixService.updatePrix(this.prixAddForm);
-      this.snackBar.open('✅ prix successfully edited ✅', null, {
+      this.commandeService.updateCommande(this.commandeAddForm);
+      this.snackBar.open('✅ commande successfully edited ✅', null, {
         duration: AppSettings.TOAST_DURATION,
       });
       this.dialogRef.close();
@@ -77,3 +77,4 @@ export class PrixAddComponent implements OnInit {
     }
   }
 }
+

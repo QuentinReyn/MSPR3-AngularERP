@@ -4,38 +4,39 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Global } from '../../../../../app/models/global.model';
-import { PrixService } from '../../../../../app/services/prix.service';
+import { MarchesService } from '../../../../../app/services/marches.service';
 import { AppSettings } from '../../../../../app/app.settings';
-import { cpuUsage } from 'process';
+
 
 @Component({
-  selector: 'app-prix-add',
-  templateUrl: './prix-add.component.html',
-  styleUrls: ['./prix-add.component.css'],
+  selector: 'app-marches-add',
+  templateUrl: './marches-add.component.html',
+  styleUrls: ['./marches-add.component.css']
 })
-export class PrixAddComponent implements OnInit {
+export class MarchesAddComponent implements OnInit {
+
   constructor(
-    @Inject(MAT_DIALOG_DATA) public prix: Global,
+    @Inject(MAT_DIALOG_DATA) public marche: Global,
     public snackBar: MatSnackBar,
     private _formBuilder: FormBuilder,
-    public dialogRef: MatDialogRef<PrixAddComponent>,
-    public prixService: PrixService
+    public dialogRef: MatDialogRef<MarchesAddComponent>,
+    public marcheService: MarchesService
   ) {}
 
   onAdd = new EventEmitter();
-  prixAddForm: FormGroup;
+  marcheAddForm: FormGroup;
   appSettings = AppSettings;
 
   ngOnInit() {
-    if (this.prix != null) {
-      this.prixAddForm = this._formBuilder.group({
-        product_name: [this.prix.product_name, Validators.required],
-        tva: [this.prix.tva],
-        price: [this.prix.price],
-        id: [this.prix.id],
+    if (this.marche != null) {
+      this.marcheAddForm = this._formBuilder.group({
+        product_name: [this.marche.product_name, Validators.required],
+        tva: [this.marche.tva],
+        price: [this.marche.price],
+        id: [this.marche.id],
       });
     } else {
-      this.prixAddForm = this._formBuilder.group({
+      this.marcheAddForm = this._formBuilder.group({
         product_name: ['', Validators.required],
         tva: [],
         price: [],
@@ -48,28 +49,28 @@ export class PrixAddComponent implements OnInit {
     this.dialogRef.close();
   }
 
-  submitPrix() {
-    if (this.prix == null) {
-      this.prixService.listPrix().subscribe((data) => {
+  submitMarche() {
+    if (this.marche == null) {
+      this.marcheService.listMarche().subscribe((data) => {
         var lastId = Math.max.apply(
           Math,
           data.map(function (o) {
             return o.id;
           })
         );
-        this.prixAddForm.patchValue({
+        this.marcheAddForm.patchValue({
           id: lastId + 1,
         });
-        this.prixService.savePrix(this.prixAddForm);
-        this.snackBar.open('✅ prix successfully created ✅', null, {
+        this.marcheService.saveMarche(this.marcheAddForm);
+        this.snackBar.open('✅ marche successfully created ✅', null, {
           duration: AppSettings.TOAST_DURATION,
         });
         this.dialogRef.close();
         this.onAdd.emit();
       });
     } else {
-      this.prixService.updatePrix(this.prixAddForm);
-      this.snackBar.open('✅ prix successfully edited ✅', null, {
+      this.marcheService.updateMarche(this.marcheAddForm);
+      this.snackBar.open('✅ marche successfully edited ✅', null, {
         duration: AppSettings.TOAST_DURATION,
       });
       this.dialogRef.close();

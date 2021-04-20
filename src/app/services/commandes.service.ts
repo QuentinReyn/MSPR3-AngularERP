@@ -1,9 +1,32 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { FormGroup } from '@angular/forms';
+import { Observable } from 'rxjs';
+import { AppSettings } from '../app.settings';
+import { Global } from '../models/global.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CommandesService {
+  constructor(private http: HttpClient) { }
 
-  constructor() { }
+  listCommande(): Observable<Global[]> {
+      return this.http.get<Global[]>(AppSettings.API_ENDPOINT + "/commandes");
+  }
+
+
+  saveCommande(resourceFormAdd: FormGroup) {
+      let body = { product_name : resourceFormAdd.value.product_name,tva:resourceFormAdd.value.tva,price:resourceFormAdd.value.price,id:resourceFormAdd.value.id};
+      return this.http.post(AppSettings.API_ENDPOINT + "/commandes/", body).subscribe();
+  }
+
+  updateCommande(resourceFormAdd: FormGroup) {
+    let body = { product_name : resourceFormAdd.value.product_name,tva:resourceFormAdd.value.tva,price:resourceFormAdd.value.price,id:resourceFormAdd.value.id};
+    return this.http.put(AppSettings.API_ENDPOINT + "/commandes/"+resourceFormAdd.value.id, body).subscribe();
+}
+
+  deleteCommandeById(id) {
+      return this.http.delete(AppSettings.API_ENDPOINT + "/commandes/" + id);
+  }
 }
