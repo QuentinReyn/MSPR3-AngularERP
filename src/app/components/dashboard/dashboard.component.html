@@ -1,51 +1,98 @@
-<div class="dashboard">
-  <div class="main-content">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-4">
-                <lbd-chart
-                  [title]="'Statistique Email'"
-                  [subtitle]="'Dernière Campagne de Performance'"
-                  [chartClass]="'ct-perfect-fourth'"
-                  [chartType]="emailChartType"
-                  [chartData]="emailChartData"
-                  [legendItems]="emailChartLegendItems"
-                  [withHr]="true"
-                  [footerIconClass]="'fa fa-clock-o'"
-                  [footerText]="'Campagne envoyée il y a 2 jours'">
-                </lbd-chart>
-            </div>
-            <div class="col-md-8">
-                <lbd-chart
-                  [title]="'Comportement utilisateur'"
-                  [subtitle]="'Sur une journée'"
-                  [chartType]="hoursChartType"
-                  [chartData]="hoursChartData"
-                  [chartOptions]="hoursChartOptions"
-                  [chartResponsive]="hoursChartResponsive"
-                  [legendItems]="hoursChartLegendItems"
-                  [withHr]="true"
-                  [footerIconClass]="'fa fa-history'"
-                  [footerText]="'Mis à jour il y a 3 minutes'">
-                </lbd-chart>
-            </div>
+
+  <div id="dashboard">
+  <header class="dashboard__header">
+    <h1>My Dashboard</h1>
+    <div style="font-weight: 300;font-size: 0.9rem;">Données du {{today}}</div>
+        <!-- <mat-form-field color="primary" style="margin-top: 0.2rem;"> 
+          <input matInput 
+            [matDatepicker]="picker" 
+            placeholder=""
+            color="#FFF"
+            (click)="picker.open()"
+            >
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker panelClass="datepickerTwo"></mat-datepicker>
+        </mat-form-field> -->
+  </header>
+  <section class="dash-row">
+    <mat-card id="welcome-message" style="">
+      <div class="welcome__left">
+        <h2>Bonjour John!</h2>
+        <p>
+        Nous avons crée un report de données pour vous.
+       On dirait que le trafic du site a augmenté de <span style="font-weight:600">40%</span> depuis la semaine dernière
+        </p>
+      </div>
+      <div class="welcome__center">
+        <h5>Avril 23 - Avril 29</h5>
+        <div class="spark-container">
+          <zingchart-angular [config]="reachSpark" [height]="'30px'" [width]="'50px'"></zingchart-angular>
+          <div class="spark-stat">+1528 Visites</div>
         </div>
-        <div class="row">
-            <div class="col-md-6">
-                <lbd-chart
-                  [title]="'Ventes 2020'"
-                  [subtitle]="'Tous les produits incluant la taxes'"
-                  [chartType]="activityChartType"
-                  [chartData]="activityChartData"
-                  [chartOptions]="activityChartOptions"
-                  [chartResponsive]="activityChartResponsive"
-                  [legendItems]="activityChartLegendItems"
-                  [withHr]="true"
-                  [footerIconClass]="'fa fa-check'"
-                  [footerText]="'Données informations certifiées'">
-                </lbd-chart>
-            </div>
+        <div class="spark-container">
+                    <zingchart-angular [config]="impressionsSpark" [height]="'30px'" [width]="'50px'"></zingchart-angular>
+
+          <div class="spark-stat">+608 Impressions</div>
         </div>
-    </div>
-</div>
+        <div class="spark-container">
+                    <zingchart-angular [config]="campaignSpark" [height]="'30px'" [width]="'50px'"></zingchart-angular>
+
+          <div class="spark-stat">-102 Cliques</div>
+        </div>
+        <div style="margin-top: 1rem"><a href="#">Learn More</a></div>
+      </div>
+      <div class="welcome__right">
+
+      </div>
+
+      </mat-card>
+  </section>
+  <section class="dash-row">
+
+    <mat-card id="card-0-1" style="color: white">
+      <mat-card-title >
+        Trafic
+      </mat-card-title>
+      <mat-card-subtitle style="color: white">https://erp-preudhomme.herokuapp.com/</mat-card-subtitle>
+      <zingchart-angular #subscribers [config]="websiteTraffic" [height]="'250px'"></zingchart-angular>
+
+    </mat-card>
+        <mat-card id="card-0-2">
+      <mat-card-title >
+        Budget
+      </mat-card-title>
+      <mat-card-subtitle>Pourcentage des dépenses annuel</mat-card-subtitle>
+      <zingchart-angular [config]="allocatedBudget" [height]="'250px'"></zingchart-angular>
+
+    </mat-card>
+        <mat-card id="card-1-1">
+      <mat-card-title style="color: white">
+        Interactions
+      </mat-card-title>
+      <mat-card-subtitle style="color: white">Vos intéractions client</mat-card-subtitle>
+      <zingchart-angular [config]="customerInteractions" [height]="'220px'"></zingchart-angular>
+    </mat-card>
+
+  </section>
+    <section class="dash-row">
+    <mat-card>
+      <mat-card-title>
+        Téléchargement
+      </mat-card-title>
+      <mat-card-subtitle >Bande passante utilisée</mat-card-subtitle>
+      <mat-card-content>
+        <zingchart-angular [config]="mediaConsumption" [height]="'250px'"></zingchart-angular>
+      </mat-card-content>
+    </mat-card>
+      <mat-card>
+      <mat-card-title>
+        Réseaux sociaux
+      </mat-card-title>
+      <mat-card-subtitle>Engagement par plateforme</mat-card-subtitle>
+      <mat-card-content>
+        <zingchart-angular [config]="enagementPlatforms" [height]="'250px'"></zingchart-angular>
+      </mat-card-content>
+    </mat-card>  </section>
+  
+
 </div>

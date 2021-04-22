@@ -70,8 +70,12 @@ import { GestionCoutsAddComponent } from './components/ressource-humaines/gestio
 import { ClientsComponent } from './components/finance/clients/clients.component';
 import { LbdModule } from './components/lbd/lbd.module';
 
+import { ZingchartAngularModule } from 'zingchart-angular';
+import { LoginComponent } from './components/login/login.component';
+
 @NgModule({
   declarations: [
+    LoginComponent,
     AppComponent,
     PrixComponent,
     DashboardComponent,
@@ -99,6 +103,7 @@ import { LbdModule } from './components/lbd/lbd.module';
   ],
  
   imports: [
+    ZingchartAngularModule,
     CommonModule,
     FormsModule, 
     LbdModule,
