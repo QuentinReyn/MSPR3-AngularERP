@@ -67,6 +67,7 @@ import { TvaComponent } from './components/ressource-humaines/tva/tva.component'
 import { TvaAddComponent } from './components/ressource-humaines/tva/tva-add/tva-add.component';
 import { GestionComptesAddComponent } from './components/ressource-humaines/gestion-comptes/gestion-comptes-add/gestion-comptes-add.component';
 import { GestionCoutsAddComponent } from './components/ressource-humaines/gestion-couts/gestion-couts-add/gestion-couts-add.component';
+import { ClientsComponent } from './components/finance/clients/clients.component';
 
 @NgModule({
   declarations: [
@@ -92,7 +93,8 @@ import { GestionCoutsAddComponent } from './components/ressource-humaines/gestio
     TvaComponent,
     TvaAddComponent,
     GestionComptesAddComponent,
-    GestionCoutsAddComponent
+    GestionCoutsAddComponent,
+    ClientsComponent,
   ],
  
   imports: [
