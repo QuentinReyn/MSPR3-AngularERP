@@ -153,7 +153,7 @@ import { ClientsComponent } from './components/finance/clients/clients.component
     RhFinanceAddComponent,
     ConditionsVenteAddComponent,
     ClientsAddComponent],
-  providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

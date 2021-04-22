@@ -12,10 +12,10 @@ app.use(bodyParser.json()); // this will support json format
 // Serve only the static files form the dist directory
 app.use(express.static(__dirname + '/dist/Angular10FirebaseStorage'));
 
-app.get('/*', function(req,res) {
-    
-res.sendFile(path.join(__dirname+'/dist/Angular10FirebaseStorage/index.html'));
+app.get('/*', (req,res,next) => {
+    res.sendFile(path.join(__dirname+'/dist/Angular10FirebaseStorage/index.html'));
 });
+
 
 const routes = require('./routes/routes.js')(app, fs);
 
