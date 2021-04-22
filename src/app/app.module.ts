@@ -51,7 +51,7 @@ import { MarchesComponent } from './components/achats/marches/marches.component'
 import { CommandesComponent } from './components/achats/commandes/commandes.component';
 import { PrixAddComponent } from './components/achats/prix/prix-add/prix-add.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { CommonModule } from '@angular/common';
+import { CommonModule, HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { MarchesAddComponent } from './components/achats/marches/marches-add/marches-add.component';
 import { CommandesAddComponent } from './components/achats/commandes/commandes-add/commandes-add.component';
 import { FinanceComponent } from './components/finance/finance.component';
@@ -153,7 +153,7 @@ import { ClientsComponent } from './components/finance/clients/clients.component
     RhFinanceAddComponent,
     ConditionsVenteAddComponent,
     ClientsAddComponent],
-  providers: [],
+  providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
