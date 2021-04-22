@@ -18,15 +18,15 @@
             <mat-cell *matCellDef="let prix"> {{ prix.id }} </mat-cell>
         </ng-container>
         <ng-container matColumnDef="product_name">
-            <mat-header-cell mat-sort-header *matHeaderCellDef> Name </mat-header-cell>
+            <mat-header-cell mat-sort-header *matHeaderCellDef> Nom produit </mat-header-cell>
             <mat-cell *matCellDef="let prix"> {{ prix.product_name }} </mat-cell>
         </ng-container>
         <ng-container matColumnDef="tva">
-            <mat-header-cell mat-sort-header *matHeaderCellDef> Name </mat-header-cell>
+            <mat-header-cell mat-sort-header *matHeaderCellDef> Quantite </mat-header-cell>
             <mat-cell *matCellDef="let prix"> {{ prix.tva }} </mat-cell>
         </ng-container>
         <ng-container matColumnDef="price">
-            <mat-header-cell mat-sort-header *matHeaderCellDef> Name </mat-header-cell>
+            <mat-header-cell mat-sort-header *matHeaderCellDef> Total € </mat-header-cell>
             <mat-cell *matCellDef="let prix"> {{ prix.price }} </mat-cell>
         </ng-container>
         <ng-container matColumnDef="actions">

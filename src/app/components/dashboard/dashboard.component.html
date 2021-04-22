@@ -1,50 +1,51 @@
 <div class="dashboard">
-
-	<ul class="card" *ngFor="let card of cards; let i = index">
-		<div class="card-title">
-      <img class="hexagon" [src]="constructSrc(card.hex, 25)">
-			<span class="title">{{card.title}}</span>
-		</div>
-		<div class="description">
-			{{card.desc}}
-		</div>
-		<div class="unlocked-role" *ngIf="card.unlocked">
-      <div class="progress-container">
-			<progress id="progress" class="progress-bar" value="{{card.progress}}" max="100"></progress>
-			<label for="progress">{{card.progress}} %</label>
-      </div>
-			<div class="in-progress" *ngIf="card.inProgress">
-        <input class="resume-role" type="button" (click)="resumeRole()" value="Resume >">
-			</div>
-
-      <div class="completed-before" *ngIf="(!card.inProgress)&&(card.timesCompleted > 0)">
-				<span class="completed">
-          {{card.timesCompleted}} Completed
-        </span>
-				<button class="sign-up-btn complete" (click)="signUp()">Sign Up</button>
-			</div>
-
-      <div class="new-role" *ngIf="(card.timesCompleted == 0) && !card.inProgress">
-				<button class="sign-up-btn new" (click)="signUp()">Sign Up</button>
-			</div>
-
-		</div>
-    <div class="locked-role" *ngIf="!card.unlocked">
-      <div class="prereq-title">
-        Prerequisite Roles Remaining:
-      </div>
-      <div class="remaining-prereqs">
-      <ul class="check-for-prereq" *ngFor="let role of card.preReqs">
-      <ul class="iterate-cards" *ngFor="let c of cards">
-        <div class="prereq-compare" *ngIf="role == c.title">
-          
-          <img class="preReq-roles" [src]="constructSrc(c.hex, 20)" matTooltip="{{role}}">
-          
-          
+  <div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-4">
+                <lbd-chart
+                  [title]="'Statistique Email'"
+                  [subtitle]="'Dernière Campagne de Performance'"
+                  [chartClass]="'ct-perfect-fourth'"
+                  [chartType]="emailChartType"
+                  [chartData]="emailChartData"
+                  [legendItems]="emailChartLegendItems"
+                  [withHr]="true"
+                  [footerIconClass]="'fa fa-clock-o'"
+                  [footerText]="'Campagne envoyée il y a 2 jours'">
+                </lbd-chart>
+            </div>
+            <div class="col-md-8">
+                <lbd-chart
+                  [title]="'Comportement utilisateur'"
+                  [subtitle]="'Sur une journée'"
+                  [chartType]="hoursChartType"
+                  [chartData]="hoursChartData"
+                  [chartOptions]="hoursChartOptions"
+                  [chartResponsive]="hoursChartResponsive"
+                  [legendItems]="hoursChartLegendItems"
+                  [withHr]="true"
+                  [footerIconClass]="'fa fa-history'"
+                  [footerText]="'Mis à jour il y a 3 minutes'">
+                </lbd-chart>
+            </div>
         </div>
-      </ul>
-      </ul>
-      </div>
+        <div class="row">
+            <div class="col-md-6">
+                <lbd-chart
+                  [title]="'Ventes 2020'"
+                  [subtitle]="'Tous les produits incluant la taxes'"
+                  [chartType]="activityChartType"
+                  [chartData]="activityChartData"
+                  [chartOptions]="activityChartOptions"
+                  [chartResponsive]="activityChartResponsive"
+                  [legendItems]="activityChartLegendItems"
+                  [withHr]="true"
+                  [footerIconClass]="'fa fa-check'"
+                  [footerText]="'Données informations certifiées'">
+                </lbd-chart>
+            </div>
+        </div>
     </div>
-	</ul>
+</div>
 </div>

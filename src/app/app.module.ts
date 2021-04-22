@@ -68,6 +68,7 @@ import { TvaAddComponent } from './components/ressource-humaines/tva/tva-add/tva
 import { GestionComptesAddComponent } from './components/ressource-humaines/gestion-comptes/gestion-comptes-add/gestion-comptes-add.component';
 import { GestionCoutsAddComponent } from './components/ressource-humaines/gestion-couts/gestion-couts-add/gestion-couts-add.component';
 import { ClientsComponent } from './components/finance/clients/clients.component';
+import { LbdModule } from './components/lbd/lbd.module';
 
 @NgModule({
   declarations: [
@@ -100,6 +101,7 @@ import { ClientsComponent } from './components/finance/clients/clients.component
   imports: [
     CommonModule,
     FormsModule, 
+    LbdModule,
     ReactiveFormsModule,
     MatBadgeModule,
     MatButtonModule,
