@@ -1,0 +1,55 @@
+<div class="flex-container">
+    <div class="flex-left">
+        <button mat-button matTooltip="Ajouter Client" class="add-button" (click)="openClientModalAdd()">
+            <mat-icon aria-label="add activity">add_box</mat-icon>
+            Ajouter Client
+        </button>
+    </div>
+    <div class="flex-right">
+        <mat-form-field class="search-table-field">
+            <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
+        </mat-form-field>
+    </div>
+</div>
+<div class="mat-elevation-z4">
+    <mat-table matSort matSortActive="ID" matSortDisableClear #table [dataSource]="client" (matSortChange)="refresh()">
+        <ng-container matColumnDef="id">
+            <mat-header-cell mat-sort-header *matHeaderCellDef> ID </mat-header-cell>
+            <mat-cell *matCellDef="let client"> {{ client.id }} </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="product_name">
+            <mat-header-cell mat-sort-header *matHeaderCellDef> Nom Client </mat-header-cell>
+            <mat-cell *matCellDef="let client"> {{ client.product_name }} </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="tva">
+            <mat-header-cell mat-sort-header *matHeaderCellDef> Adresse </mat-header-cell>
+            <mat-cell *matCellDef="let client"> {{ client.tva }} </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="price">
+            <mat-header-cell mat-sort-header *matHeaderCellDef> Telephone </mat-header-cell>
+            <mat-cell *matCellDef="let client"> {{ client.price }} </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="actions">
+            <mat-header-cell *matHeaderCellDef> Actions </mat-header-cell>
+            <mat-cell *matCellDef="let client">
+                <button class="table-actions no-background no-border no-text-decoration" matTooltip="Edit informations" (click)="editClientModal(client)">
+                    <mat-icon aria-label="edit activity">edit</mat-icon>
+                </button>
+                <button class="table-actions no-background no-border no-text-decoration" matTooltip="Delete Client" (click)="deleteClientById(client.id)">
+                    <mat-icon aria-label="edit activity">delete</mat-icon>
+                </button>
+            </mat-cell>
+        </ng-container>
+
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    <!-- Row shown when there is no matching data. -->
+    <tr class="mat-row" *matNoDataRow>
+      <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+    </tr>
+    
+    </mat-table>
+    <h2 class="mat-h2 text-center" [hidden]="client.data.length > 0 || isLoadingResults">No records could be fetched</h2>
+    <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+</div>
+

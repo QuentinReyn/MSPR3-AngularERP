@@ -1,50 +1,98 @@
-<div class="dashboard">
 
-	<ul class="card" *ngFor="let card of cards; let i = index">
-		<div class="card-title">
-      <img class="hexagon" [src]="constructSrc(card.hex, 25)">
-			<span class="title">{{card.title}}</span>
-		</div>
-		<div class="description">
-			{{card.desc}}
-		</div>
-		<div class="unlocked-role" *ngIf="card.unlocked">
-      <div class="progress-container">
-			<progress id="progress" class="progress-bar" value="{{card.progress}}" max="100"></progress>
-			<label for="progress">{{card.progress}} %</label>
+  <div id="dashboard">
+  <header class="dashboard__header">
+    <h1>My Dashboard</h1>
+    <div style="font-weight: 300;font-size: 0.9rem;">Données du {{today}}</div>
+        <!-- <mat-form-field color="primary" style="margin-top: 0.2rem;"> 
+          <input matInput 
+            [matDatepicker]="picker" 
+            placeholder=""
+            color="#FFF"
+            (click)="picker.open()"
+            >
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker panelClass="datepickerTwo"></mat-datepicker>
+        </mat-form-field> -->
+  </header>
+  <section class="dash-row">
+    <mat-card id="welcome-message" style="">
+      <div class="welcome__left">
+        <h2>Bonjour John!</h2>
+        <p>
+        Nous avons crée un report de données pour vous.
+       On dirait que le trafic du site a augmenté de <span style="font-weight:600">40%</span> depuis la semaine dernière
+        </p>
       </div>
-			<div class="in-progress" *ngIf="card.inProgress">
-        <input class="resume-role" type="button" (click)="resumeRole()" value="Resume >">
-			</div>
-
-      <div class="completed-before" *ngIf="(!card.inProgress)&&(card.timesCompleted > 0)">
-				<span class="completed">
-          {{card.timesCompleted}} Completed
-        </span>
-				<button class="sign-up-btn complete" (click)="signUp()">Sign Up</button>
-			</div>
-
-      <div class="new-role" *ngIf="(card.timesCompleted == 0) && !card.inProgress">
-				<button class="sign-up-btn new" (click)="signUp()">Sign Up</button>
-			</div>
-
-		</div>
-    <div class="locked-role" *ngIf="!card.unlocked">
-      <div class="prereq-title">
-        Prerequisite Roles Remaining:
-      </div>
-      <div class="remaining-prereqs">
-      <ul class="check-for-prereq" *ngFor="let role of card.preReqs">
-      <ul class="iterate-cards" *ngFor="let c of cards">
-        <div class="prereq-compare" *ngIf="role == c.title">
-          
-          <img class="preReq-roles" [src]="constructSrc(c.hex, 20)" matTooltip="{{role}}">
-          
-          
+      <div class="welcome__center">
+        <h5>Avril 23 - Avril 29</h5>
+        <div class="spark-container">
+          <zingchart-angular [config]="reachSpark" [height]="'30px'" [width]="'50px'"></zingchart-angular>
+          <div class="spark-stat">+1528 Visites</div>
         </div>
-      </ul>
-      </ul>
+        <div class="spark-container">
+                    <zingchart-angular [config]="impressionsSpark" [height]="'30px'" [width]="'50px'"></zingchart-angular>
+
+          <div class="spark-stat">+608 Impressions</div>
+        </div>
+        <div class="spark-container">
+                    <zingchart-angular [config]="campaignSpark" [height]="'30px'" [width]="'50px'"></zingchart-angular>
+
+          <div class="spark-stat">-102 Cliques</div>
+        </div>
+        <div style="margin-top: 1rem"><a href="#">Learn More</a></div>
       </div>
-    </div>
-	</ul>
+      <div class="welcome__right">
+
+      </div>
+
+      </mat-card>
+  </section>
+  <section class="dash-row">
+
+    <mat-card id="card-0-1" style="color: white">
+      <mat-card-title >
+        Trafic
+      </mat-card-title>
+      <mat-card-subtitle style="color: white">https://erp-preudhomme.herokuapp.com/</mat-card-subtitle>
+      <zingchart-angular #subscribers [config]="websiteTraffic" [height]="'250px'"></zingchart-angular>
+
+    </mat-card>
+        <mat-card id="card-0-2">
+      <mat-card-title >
+        Budget
+      </mat-card-title>
+      <mat-card-subtitle>Pourcentage des dépenses annuel</mat-card-subtitle>
+      <zingchart-angular [config]="allocatedBudget" [height]="'250px'"></zingchart-angular>
+
+    </mat-card>
+        <mat-card id="card-1-1">
+      <mat-card-title style="color: white">
+        Interactions
+      </mat-card-title>
+      <mat-card-subtitle style="color: white">Vos intéractions client</mat-card-subtitle>
+      <zingchart-angular [config]="customerInteractions" [height]="'220px'"></zingchart-angular>
+    </mat-card>
+
+  </section>
+    <section class="dash-row">
+    <mat-card>
+      <mat-card-title>
+        Téléchargement
+      </mat-card-title>
+      <mat-card-subtitle >Bande passante utilisée</mat-card-subtitle>
+      <mat-card-content>
+        <zingchart-angular [config]="mediaConsumption" [height]="'250px'"></zingchart-angular>
+      </mat-card-content>
+    </mat-card>
+      <mat-card>
+      <mat-card-title>
+        Réseaux sociaux
+      </mat-card-title>
+      <mat-card-subtitle>Engagement par plateforme</mat-card-subtitle>
+      <mat-card-content>
+        <zingchart-angular [config]="enagementPlatforms" [height]="'250px'"></zingchart-angular>
+      </mat-card-content>
+    </mat-card>  </section>
+  
+
 </div>

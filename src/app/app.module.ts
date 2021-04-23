@@ -46,15 +46,68 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { PrixComponent } from './components/achats/prix/prix.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { AchatsComponent } from './components/achats/achats.component';
+import { MarchesComponent } from './components/achats/marches/marches.component';
+import { CommandesComponent } from './components/achats/commandes/commandes.component';
+import { PrixAddComponent } from './components/achats/prix/prix-add/prix-add.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CommonModule, HashLocationStrategy, LocationStrategy } from '@angular/common';
+import { MarchesAddComponent } from './components/achats/marches/marches-add/marches-add.component';
+import { CommandesAddComponent } from './components/achats/commandes/commandes-add/commandes-add.component';
+import { FinanceComponent } from './components/finance/finance.component';
+import { ConditionsVenteComponent } from './components/finance/conditions-vente/conditions-vente.component';
+import { RhFinanceComponent } from './components/finance/rh-finance/rh-finance.component';
+import { ClientsAddComponent } from './components/finance/clients/clients-add/clients-add.component';
+import { ConditionsVenteAddComponent } from './components/finance/conditions-vente/conditions-vente-add/conditions-vente-add.component';
+import { RhFinanceAddComponent } from './components/finance/rh-finance/rh-finance-add/rh-finance-add.component';
+import { RessourceHumainesComponent } from './components/ressource-humaines/ressource-humaines.component';
+import { GestionCoutsComponent } from './components/ressource-humaines/gestion-couts/gestion-couts.component';
+import { GestionComptesComponent } from './components/ressource-humaines/gestion-comptes/gestion-comptes.component';
+import { TvaComponent } from './components/ressource-humaines/tva/tva.component';
+import { TvaAddComponent } from './components/ressource-humaines/tva/tva-add/tva-add.component';
+import { GestionComptesAddComponent } from './components/ressource-humaines/gestion-comptes/gestion-comptes-add/gestion-comptes-add.component';
+import { GestionCoutsAddComponent } from './components/ressource-humaines/gestion-couts/gestion-couts-add/gestion-couts-add.component';
+import { ClientsComponent } from './components/finance/clients/clients.component';
+import { LbdModule } from './components/lbd/lbd.module';
+
+import { ZingchartAngularModule } from 'zingchart-angular';
+import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
   declarations: [
+    LoginComponent,
     AppComponent,
     PrixComponent,
     DashboardComponent,
-    SidenavComponent
+    SidenavComponent,
+    AchatsComponent,
+    MarchesComponent,
+    CommandesComponent,
+    PrixAddComponent,
+    MarchesAddComponent,
+    CommandesAddComponent,
+    FinanceComponent,
+    ConditionsVenteComponent,
+    RhFinanceComponent,
+    ClientsAddComponent,
+    ConditionsVenteAddComponent,
+    RhFinanceAddComponent,
+    RessourceHumainesComponent,
+    GestionCoutsComponent,
+    GestionComptesComponent,
+    TvaComponent,
+    TvaAddComponent,
+    GestionComptesAddComponent,
+    GestionCoutsAddComponent,
+    ClientsComponent,
   ],
+ 
   imports: [
+    ZingchartAngularModule,
+    CommonModule,
+    FormsModule, 
+    LbdModule,
+    ReactiveFormsModule,
     MatBadgeModule,
     MatButtonModule,
     BrowserAnimationsModule,
@@ -97,7 +150,17 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
     BrowserAnimationsModule,
     AppRoutingModule
   ],
-  providers: [],
+  entryComponents: [
+    PrixAddComponent,
+    MarchesAddComponent,
+    CommandesAddComponent,
+    GestionComptesAddComponent,
+    GestionCoutsAddComponent,
+    TvaAddComponent,
+    RhFinanceAddComponent,
+    ConditionsVenteAddComponent,
+    ClientsAddComponent],
+  providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

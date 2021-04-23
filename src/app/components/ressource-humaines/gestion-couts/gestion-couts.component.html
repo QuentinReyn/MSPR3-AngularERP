@@ -1,0 +1,56 @@
+<div class="flex-container">
+    <div class="flex-left">
+        <button mat-button matTooltip="Ajouter GestionCout" class="add-button" (click)="openGestionCoutModalAdd()">
+            <mat-icon aria-label="add activity">add_box</mat-icon>
+            Ajouter GestionCout
+        </button>
+    </div>
+    <div class="flex-right">
+        <mat-form-field class="search-table-field">
+            <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
+        </mat-form-field>
+    </div>
+</div>
+<div class="mat-elevation-z4">
+    <mat-table matSort matSortActive="ID" matSortDisableClear #table [dataSource]="gestionCout" (matSortChange)="refresh()">
+        <ng-container matColumnDef="id">
+            <mat-header-cell mat-sort-header *matHeaderCellDef> ID </mat-header-cell>
+            <mat-cell *matCellDef="let gestionCout"> {{ gestionCout.id }} </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="product_name">
+            <mat-header-cell mat-sort-header *matHeaderCellDef> Mission </mat-header-cell>
+            <mat-cell *matCellDef="let gestionCout"> {{ gestionCout.product_name }} </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="tva">
+            <mat-header-cell mat-sort-header *matHeaderCellDef> Budget </mat-header-cell>
+            <mat-cell *matCellDef="let gestionCout"> {{ gestionCout.tva }} </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="price">
+            <mat-header-cell mat-sort-header *matHeaderCellDef> Risque </mat-header-cell>
+            <mat-cell *matCellDef="let gestionCout"> {{ gestionCout.price }} </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="actions">
+            <mat-header-cell *matHeaderCellDef> Actions </mat-header-cell>
+            <mat-cell *matCellDef="let gestionCout">
+                <button class="table-actions no-background no-border no-text-decoration" matTooltip="Edit informations" (click)="editGestionCoutModal(gestionCout)">
+                    <mat-icon aria-label="edit activity">edit</mat-icon>
+                </button>
+                <button class="table-actions no-background no-border no-text-decoration" matTooltip="Delete GestionCout" (click)="deleteGestionCoutById(gestionCout.id)">
+                    <mat-icon aria-label="edit activity">delete</mat-icon>
+                </button>
+            </mat-cell>
+        </ng-container>
+
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    <!-- Row shown when there is no matching data. -->
+    <tr class="mat-row" *matNoDataRow>
+      <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+    </tr>
+    
+    </mat-table>
+    <h2 class="mat-h2 text-center" [hidden]="gestionCout.data.length > 0 || isLoadingResults">No records could be fetched</h2>
+    <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+</div>
+
+

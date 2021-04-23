@@ -1,0 +1,608 @@
+[
+  {
+    "id": 1,
+    "product_name": "NYSE",
+    "tva": "Indonesia",
+    "price": "Finance"
+  },
+  {
+    "id": 2,
+    "product_name": "NYSE",
+    "tva": "Macedonia",
+    "price": "Energy"
+  },
+  {
+    "id": 3,
+    "product_name": "NYSE",
+    "tva": "Brazil",
+    "price": "Energy"
+  },
+  {
+    "id": 4,
+    "product_name": "NASDAQ",
+    "tva": "France",
+    "price": "n/a"
+  },
+  {
+    "id": 5,
+    "product_name": "NYSE",
+    "tva": "France",
+    "price": "Energy"
+  },
+  {
+    "id": 6,
+    "product_name": "NYSE",
+    "tva": "Azerbaijan",
+    "price": "Basic Industries"
+  },
+  {
+    "id": 7,
+    "product_name": "NASDAQ",
+    "tva": "Indonesia",
+    "price": "Finance"
+  },
+  {
+    "id": 8,
+    "product_name": "NYSE",
+    "tva": "China",
+    "price": "n/a"
+  },
+  {
+    "id": 9,
+    "product_name": "NASDAQ",
+    "tva": "Sweden",
+    "price": "Consumer Services"
+  },
+  {
+    "id": 10,
+    "product_name": "NYSE",
+    "tva": "Brazil",
+    "price": "n/a"
+  },
+  {
+    "id": 11,
+    "product_name": "NYSE",
+    "tva": "New Zealand",
+    "price": "Health Care"
+  },
+  {
+    "id": 12,
+    "product_name": "NYSE",
+    "tva": "South Africa",
+    "price": "Miscellaneous"
+  },
+  {
+    "id": 13,
+    "product_name": "NASDAQ",
+    "tva": "Portugal",
+    "price": "n/a"
+  },
+  {
+    "id": 14,
+    "product_name": "NYSE",
+    "tva": "Australia",
+    "price": "Technology"
+  },
+  {
+    "id": 15,
+    "product_name": "NASDAQ",
+    "tva": "Brazil",
+    "price": "Health Care"
+  },
+  {
+    "id": 16,
+    "product_name": "NYSE",
+    "tva": "Brazil",
+    "price": "Consumer Services"
+  },
+  {
+    "id": 17,
+    "product_name": "NASDAQ",
+    "tva": "China",
+    "price": "Basic Industries"
+  },
+  {
+    "id": 18,
+    "product_name": "NYSE",
+    "tva": "Tajikistan",
+    "price": "n/a"
+  },
+  {
+    "id": 19,
+    "product_name": "NYSE",
+    "tva": "China",
+    "price": "Energy"
+  },
+  {
+    "id": 20,
+    "product_name": "NASDAQ",
+    "tva": "Azerbaijan",
+    "price": "Finance"
+  },
+  {
+    "id": 21,
+    "product_name": "NYSE",
+    "tva": "China",
+    "price": "n/a"
+  },
+  {
+    "id": 22,
+    "product_name": "NASDAQ",
+    "tva": "China",
+    "price": "Health Care"
+  },
+  {
+    "id": 23,
+    "product_name": "NASDAQ",
+    "tva": "Portugal",
+    "price": "Consumer Services"
+  },
+  {
+    "id": 24,
+    "product_name": "NYSE",
+    "tva": "Indonesia",
+    "price": "Consumer Durables"
+  },
+  {
+    "id": 25,
+    "product_name": "NASDAQ",
+    "tva": "Philippines",
+    "price": "Finance"
+  },
+  {
+    "id": 26,
+    "product_name": "NASDAQ",
+    "tva": "Ukraine",
+    "price": "Finance"
+  },
+  {
+    "id": 27,
+    "product_name": "NASDAQ",
+    "tva": "Slovenia",
+    "price": "Finance"
+  },
+  {
+    "id": 28,
+    "product_name": "NASDAQ",
+    "tva": "Egypt",
+    "price": "Technology"
+  },
+  {
+    "id": 29,
+    "product_name": "NYSE",
+    "tva": "Philippines",
+    "price": "Capital Goods"
+  },
+  {
+    "id": 30,
+    "product_name": "NYSE",
+    "tva": "Morocco",
+    "price": "Consumer Services"
+  },
+  {
+    "id": 31,
+    "product_name": "NASDAQ",
+    "tva": "Ukraine",
+    "price": "n/a"
+  },
+  {
+    "id": 32,
+    "product_name": "NYSE",
+    "tva": "Afghanistan",
+    "price": "Finance"
+  },
+  {
+    "id": 33,
+    "product_name": "NASDAQ",
+    "tva": "Indonesia",
+    "price": "Health Care"
+  },
+  {
+    "id": 34,
+    "product_name": "NASDAQ",
+    "tva": "Poland",
+    "price": "Technology"
+  },
+  {
+    "id": 35,
+    "product_name": "NYSE",
+    "tva": "Czech Republic",
+    "price": "n/a"
+  },
+  {
+    "id": 36,
+    "product_name": "NASDAQ",
+    "tva": "China",
+    "price": "Technology"
+  },
+  {
+    "id": 37,
+    "product_name": "NYSE",
+    "tva": "China",
+    "price": "Technology"
+  },
+  {
+    "id": 38,
+    "product_name": "NYSE",
+    "tva": "Philippines",
+    "price": "n/a"
+  },
+  {
+    "id": 39,
+    "product_name": "NASDAQ",
+    "tva": "Yemen",
+    "price": "Capital Goods"
+  },
+  {
+    "id": 40,
+    "product_name": "NASDAQ",
+    "tva": "Poland",
+    "price": "n/a"
+  },
+  {
+    "id": 41,
+    "product_name": "NYSE",
+    "tva": "Indonesia",
+    "price": "Finance"
+  },
+  {
+    "id": 42,
+    "product_name": "NYSE",
+    "tva": "Tanzania",
+    "price": "Health Care"
+  },
+  {
+    "id": 43,
+    "product_name": "NYSE",
+    "tva": "Canada",
+    "price": "Consumer Services"
+  },
+  {
+    "id": 44,
+    "product_name": "NASDAQ",
+    "tva": "Japan",
+    "price": "Health Care"
+  },
+  {
+    "id": 45,
+    "product_name": "NASDAQ",
+    "tva": "Kuwait",
+    "price": "Finance"
+  },
+  {
+    "id": 46,
+    "product_name": "NASDAQ",
+    "tva": "Colombia",
+    "price": "n/a"
+  },
+  {
+    "id": 47,
+    "product_name": "NYSE",
+    "tva": "Palestinian Territory",
+    "price": "n/a"
+  },
+  {
+    "id": 48,
+    "product_name": "NYSE",
+    "tva": "Burundi",
+    "price": "n/a"
+  },
+  {
+    "id": 49,
+    "product_name": "NYSE",
+    "tva": "China",
+    "price": "Technology"
+  },
+  {
+    "id": 50,
+    "product_name": "NYSE",
+    "tva": "Malawi",
+    "price": "Energy"
+  },
+  {
+    "id": 51,
+    "product_name": "NYSE",
+    "tva": "Luxembourg",
+    "price": "Miscellaneous"
+  },
+  {
+    "id": 52,
+    "product_name": "NASDAQ",
+    "tva": "France",
+    "price": "Energy"
+  },
+  {
+    "id": 53,
+    "product_name": "NASDAQ",
+    "tva": "Australia",
+    "price": "Technology"
+  },
+  {
+    "id": 54,
+    "product_name": "NASDAQ",
+    "tva": "Vietnam",
+    "price": "Consumer Services"
+  },
+  {
+    "id": 55,
+    "product_name": "NYSE",
+    "tva": "Russia",
+    "price": "n/a"
+  },
+  {
+    "id": 56,
+    "product_name": "NASDAQ",
+    "tva": "Poland",
+    "price": "Health Care"
+  },
+  {
+    "id": 57,
+    "product_name": "NYSE",
+    "tva": "Palestinian Territory",
+    "price": "Energy"
+  },
+  {
+    "id": 58,
+    "product_name": "NYSE",
+    "tva": "Portugal",
+    "price": "Health Care"
+  },
+  {
+    "id": 59,
+    "product_name": "NASDAQ",
+    "tva": "Russia",
+    "price": "Consumer Durables"
+  },
+  {
+    "id": 60,
+    "product_name": "NYSE",
+    "tva": "Philippines",
+    "price": "Health Care"
+  },
+  {
+    "id": 61,
+    "product_name": "NASDAQ",
+    "tva": "Philippines",
+    "price": "Consumer Services"
+  },
+  {
+    "id": 62,
+    "product_name": "NYSE",
+    "tva": "China",
+    "price": "Consumer Services"
+  },
+  {
+    "id": 63,
+    "product_name": "NASDAQ",
+    "tva": "China",
+    "price": "Consumer Durables"
+  },
+  {
+    "id": 64,
+    "product_name": "NYSE",
+    "tva": "France",
+    "price": "n/a"
+  },
+  {
+    "id": 65,
+    "product_name": "NASDAQ",
+    "tva": "China",
+    "price": "Technology"
+  },
+  {
+    "id": 66,
+    "product_name": "NYSE",
+    "tva": "Indonesia",
+    "price": "Capital Goods"
+  },
+  {
+    "id": 67,
+    "product_name": "NASDAQ",
+    "tva": "China",
+    "price": "Health Care"
+  },
+  {
+    "id": 68,
+    "product_name": "NASDAQ",
+    "tva": "Canada",
+    "price": "Health Care"
+  },
+  {
+    "id": 69,
+    "product_name": "NASDAQ",
+    "tva": "Finland",
+    "price": "n/a"
+  },
+  {
+    "id": 70,
+    "product_name": "NASDAQ",
+    "tva": "Myanmar",
+    "price": "n/a"
+  },
+  {
+    "id": 71,
+    "product_name": "NASDAQ",
+    "tva": "Russia",
+    "price": "n/a"
+  },
+  {
+    "id": 72,
+    "product_name": "NASDAQ",
+    "tva": "Indonesia",
+    "price": "Finance"
+  },
+  {
+    "id": 73,
+    "product_name": "NYSE",
+    "tva": "Thailand",
+    "price": "Public Utilities"
+  },
+  {
+    "id": 74,
+    "product_name": "NYSE",
+    "tva": "Canada",
+    "price": "Capital Goods"
+  },
+  {
+    "id": 75,
+    "product_name": "NYSE",
+    "tva": "Argentina",
+    "price": "Public Utilities"
+  },
+  {
+    "id": 76,
+    "product_name": "NASDAQ",
+    "tva": "Indonesia",
+    "price": "Consumer Services"
+  },
+  {
+    "id": 77,
+    "product_name": "NASDAQ",
+    "tva": "Argentina",
+    "price": "Technology"
+  },
+  {
+    "id": 78,
+    "product_name": "NYSE",
+    "tva": "China",
+    "price": "n/a"
+  },
+  {
+    "id": 79,
+    "product_name": "NYSE",
+    "tva": "Portugal",
+    "price": "n/a"
+  },
+  {
+    "id": 80,
+    "product_name": "NYSE",
+    "tva": "United States",
+    "price": "Consumer Services"
+  },
+  {
+    "id": 81,
+    "product_name": "NYSE",
+    "tva": "Russia",
+    "price": "Consumer Services"
+  },
+  {
+    "id": 82,
+    "product_name": "NASDAQ",
+    "tva": "Cameroon",
+    "price": "Health Care"
+  },
+  {
+    "id": 83,
+    "product_name": "NYSE",
+    "tva": "China",
+    "price": "n/a"
+  },
+  {
+    "id": 84,
+    "product_name": "NYSE",
+    "tva": "Japan",
+    "price": "Consumer Services"
+  },
+  {
+    "id": 85,
+    "product_name": "NASDAQ",
+    "tva": "Brazil",
+    "price": "Energy"
+  },
+  {
+    "id": 86,
+    "product_name": "NASDAQ",
+    "tva": "China",
+    "price": "Public Utilities"
+  },
+  {
+    "id": 87,
+    "product_name": "NYSE",
+    "tva": "South Korea",
+    "price": "Consumer Services"
+  },
+  {
+    "id": 88,
+    "product_name": "NASDAQ",
+    "tva": "Indonesia",
+    "price": "Finance"
+  },
+  {
+    "id": 89,
+    "product_name": "NYSE",
+    "tva": "China",
+    "price": "Finance"
+  },
+  {
+    "id": 90,
+    "product_name": "NYSE",
+    "tva": "Philippines",
+    "price": "Consumer Services"
+  },
+  {
+    "id": 91,
+    "product_name": "NASDAQ",
+    "tva": "Australia",
+    "price": "Health Care"
+  },
+  {
+    "id": 92,
+    "product_name": "NYSE",
+    "tva": "Palestinian Territory",
+    "price": "n/a"
+  },
+  {
+    "id": 93,
+    "product_name": "NASDAQ",
+    "tva": "Rwanda",
+    "price": "Consumer Services"
+  },
+  {
+    "id": 94,
+    "product_name": "NASDAQ",
+    "tva": "Colombia",
+    "price": "n/a"
+  },
+  {
+    "id": 95,
+    "product_name": "NYSE",
+    "tva": "Russia",
+    "price": "Finance"
+  },
+  {
+    "id": 96,
+    "product_name": "NYSE",
+    "tva": "Indonesia",
+    "price": "Energy"
+  },
+  {
+    "id": 97,
+    "product_name": "NASDAQ",
+    "tva": "Philippines",
+    "price": "n/a"
+  },
+  {
+    "id": 98,
+    "product_name": "NYSE",
+    "tva": "Philippines",
+    "price": "Technology"
+  },
+  {
+    "id": 99,
+    "product_name": "NASDAQ",
+    "tva": "China",
+    "price": "Miscellaneous"
+  },
+  {
+    "id": 100,
+    "product_name": "NASDAQ",
+    "tva": "Nigeria",
+    "price": "Health Care"
+  },
+  {
+    "id": 103,
+    "product_name": "aezae",
+    "tva": "eza",
+    "price": "azeaze"
+  }
+]

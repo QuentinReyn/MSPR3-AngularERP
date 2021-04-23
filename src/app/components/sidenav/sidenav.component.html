@@ -3,21 +3,21 @@
         <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : 'side'"
                      [fixedInViewport]="mobileQuery.matches" fixedTopGap="56" opened="true" class="mat-elevation-z6">
             <mat-nav-list>
-                <a mat-list-item>
+                <a mat-list-item routerLink="/">
                     <mat-icon>home</mat-icon>
                     <span>Home</span>
                 </a>
-                <a mat-list-item>
-                    <mat-icon>analytics</mat-icon>
+                <a mat-list-item routerLink="achats">
+                    <mat-icon>add_shopping_cart</mat-icon>
                     <span>Gestion achats</span>
-                </a>
-                <a mat-list-item>
-                    <mat-icon>analytics</mat-icon>
-                    <span>Gestion RH</span>
-                </a>
-                <a mat-list-item>
-                    <mat-icon>analytics</mat-icon>
+                </a>             
+                <a mat-list-item routerLink="finances">
+                    <mat-icon>trending_up</mat-icon>
                     <span>Gestion finances</span>
+                </a>
+                <a mat-list-item routerLink="RH">
+                    <mat-icon>accessibility_new</mat-icon>
+                    <span>Gestion RH</span>
                 </a>
             </mat-nav-list>
         </mat-sidenav>
@@ -49,18 +49,14 @@
                             <mat-icon>arrow_drop_down</mat-icon>
                         </button>
                         <mat-menu #adminPanel="matMenu" yPosition="below" [overlapTrigger]="false">
-                            <!-- <a routerLink="/" routerLinkActive="active" mat-menu-item>
-                                <mat-icon>home</mat-icon>
-                                <span>Home</span>
-                            </a>
-                            <a routerLink="/assets/list" routerLinkActive="active" mat-menu-item>
+                            <a mat-menu-item>
                                 <mat-icon>calendar_today</mat-icon>
-                                <span>Liste des assets</span>
+                                <span>Gestion des accès</span>
                             </a>
-                            <a routerLink="/dashboard" routerLinkActive="active" mat-menu-item>
+                            <a mat-menu-item>
                                 <mat-icon>build</mat-icon>
                                 <span>Tableau de bord</span>
-                            </a> -->
+                            </a>
                         </mat-menu>
                     </div>
                     <div class="user-infos">
